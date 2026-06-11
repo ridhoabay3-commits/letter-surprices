@@ -36,9 +36,30 @@ let fade = setInterval(() => {
 
         setTimeout(() => {
 
-            openingPage.style.display = "none";
+           const transitionScreen =
+document.getElementById("transitionScreen");
 
-            website.classList.remove("hidden");
+setTimeout(() => {
+
+    transitionScreen.classList.add("show");
+
+},1200);
+
+
+setTimeout(() => {
+
+    openingPage.style.display = "none";
+
+},2500);
+
+
+setTimeout(() => {
+
+    transitionScreen.classList.remove("show");
+
+    website.classList.remove("hidden");
+
+},4500);
 
         }, 800);
 
@@ -168,7 +189,7 @@ revealSections();
 // ================= COUNTDOWN =================
 
 // GANTI TANGGAL INI NANTI
-const firstMeet = new Date("2024-01-01");
+const firstMeet = new Date("2026-04-18");
 
 function updateCountdown(){
 
