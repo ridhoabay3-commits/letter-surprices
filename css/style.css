@@ -34,7 +34,68 @@ body{
 
 }
 
+.arrow{
 
+    font-size:2rem;
+
+    color:#c97b93;
+
+    margin-top:20px;
+
+    animation: bounce 2s infinite;
+
+    text-align:center;
+}
+
+.transition-screen{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(255,245,248,.95);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:999;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:1s;
+}
+
+.transition-screen.show{
+
+    opacity:1;
+    visibility:visible;
+}
+
+.transition-text{
+
+    font-family:'Playfair Display',serif;
+
+    color:#c97b93;
+
+    font-size:2rem;
+
+    animation: fadeText 2s infinite alternate;
+
+    text-align:center;
+}
+
+@keyframes fadeText{
+
+    from{
+        opacity:.4;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
 /* ================= PETALS ================= */
 
 .petals-container{
@@ -313,13 +374,10 @@ section h2{
 }
 
 .carousel-track{
-
     display:flex;
-    gap:25px;
-
+    gap:20px;
     width:max-content;
-
-    animation: scrollPhoto 20s linear infinite;
+    animation: scrollPhoto 30s linear infinite;
 }
 
 .photo-item{
@@ -602,20 +660,24 @@ footer p{
         font-size:3rem;
     }
 
+    .photo-item{
+        width:180px;
+        height:260px;
+    }
+
+
 }
 
-@keyframes scrollPhoto{
 
-    0%{
-        transform:translateX(0);
+
+@keyframes scrollPhoto {
+
+    from {
+        transform: translateX(0);
     }
 
-    50%{
-        transform:translateX(-350px);
-    }
-
-    100%{
-        transform:translateX(0);
+    to {
+        transform: translateX(-50%);
     }
 
 }
